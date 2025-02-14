@@ -24,7 +24,6 @@ type
     bntcancelar: TButton;
     bntsalvar: TButton;
     procedure bntsalvarClick(Sender: TObject);
-    procedure bntcancelarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,13 +36,6 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TFormCadastro.bntcancelarClick(Sender: TObject);
-begin
-
-Close;//Ele fecha a pagina.
-
-end;
 
 procedure TFormCadastro.bntsalvarClick(Sender: TObject);
 begin
