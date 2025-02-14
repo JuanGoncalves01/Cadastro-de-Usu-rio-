@@ -12,7 +12,7 @@ uses
   Vcl.DBGrids, FireDAC.Comp.DataSet, FireDAC.Phys.MySQL, FireDAC.Phys.MySQLDef;
 
 type
-  TFormCadastro = class(TForm)
+  TForm1 = class(TForm)
     FDConnection1: TFDConnection;
     FDQuery1: TFDQuery;
     DataSource1: TDataSource;
@@ -23,7 +23,6 @@ type
     Label2: TLabel;
     bntcancelar: TButton;
     bntsalvar: TButton;
-    procedure bntsalvarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -31,26 +30,10 @@ type
   end;
 
 var
-  FormCadastro: TFormCadastro;
+  Form1: TForm1;
 
 implementation
 
 {$R *.dfm}
-
-procedure TFormCadastro.bntsalvarClick(Sender: TObject);
-begin
-
-    FDQuery1.SQL.Text := 'INSERT INTO Usuarios (Nome, DataNascimento) VALUES (:Nome, :DataNascimento)';//prepara para inserir os dados.
-    FDQuery1.ParamByName('Nome').AsString := edtNome.Text;  // Atribui o Nome.
-    FDQuery1.ParamByName('DataNascimento').AsDate := dtpNascimento.Date;  // Atribui a Data Nascimento.
-    FDQuery1.ExecSQL; //executa.
-
-    // Exibe uma mensagem de sucesso
-    ShowMessage('Usuário cadastrado com sucesso!'); //Para exibir uma mensagem.
-
-
-    Close;//Acaba o cadastro.
-
-end;
 
 end.

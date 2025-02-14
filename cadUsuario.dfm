@@ -1,9 +1,9 @@
-object FormCadastro: TFormCadastro
+object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'CADASTRO'
-  ClientHeight = 436
-  ClientWidth = 488
+  ClientHeight = 458
+  ClientWidth = 638
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,22 +12,22 @@ object FormCadastro: TFormCadastro
   Font.Style = []
   TextHeight = 15
   object Label1: TLabel
-    Left = 32
-    Top = 35
+    Left = 112
+    Top = 59
     Width = 33
     Height = 15
     Caption = 'Nome'
   end
   object Label2: TLabel
-    Left = 32
-    Top = 96
+    Left = 112
+    Top = 120
     Width = 121
     Height = 15
     Caption = 'Data de Nascimento'
   end
   object DBGrid1: TDBGrid
-    Left = 160
-    Top = 315
+    Left = 272
+    Top = 320
     Width = 320
     Height = 120
     DataSource = DataSource1
@@ -39,15 +39,15 @@ object FormCadastro: TFormCadastro
     TitleFont.Style = []
   end
   object edtnome: TEdit
-    Left = 32
-    Top = 51
+    Left = 112
+    Top = 75
     Width = 121
     Height = 23
     TabOrder = 1
   end
   object dtpnascimento: TDateTimePicker
-    Left = 32
-    Top = 109
+    Left = 112
+    Top = 133
     Width = 186
     Height = 23
     Date = 45702.000000000000000000
@@ -55,21 +55,20 @@ object FormCadastro: TFormCadastro
     TabOrder = 2
   end
   object bntcancelar: TButton
-    Left = 32
-    Top = 168
+    Left = 112
+    Top = 192
     Width = 75
     Height = 25
     Caption = 'Cancelar'
     TabOrder = 3
   end
   object bntsalvar: TButton
-    Left = 143
-    Top = 168
+    Left = 223
+    Top = 192
     Width = 75
     Height = 25
     Caption = 'Salvar'
     TabOrder = 4
-    OnClick = bntsalvarClick
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
@@ -77,7 +76,7 @@ object FormCadastro: TFormCadastro
       'User_Name=root'
       'Server=localhost'
       'DriverID=MySQL')
-    Left = 280
+    Left = 424
     Top = 40
   end
   object FDQuery1: TFDQuery
@@ -85,12 +84,12 @@ object FormCadastro: TFormCadastro
     SQL.Strings = (
       '    SELECT * FROM Usuarios;'
       '')
-    Left = 344
-    Top = 40
+    Left = 512
+    Top = 56
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
-    Left = 344
-    Top = 112
+    Left = 488
+    Top = 120
   end
 end
