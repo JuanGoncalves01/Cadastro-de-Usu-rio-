@@ -23,11 +23,8 @@ type
     Label2: TLabel;
     bntcancelar: TButton;
     bntsalvar: TButton;
-    Button1: TButton;
-    edtEditar: TButton;
     procedure bntsalvarClick(Sender: TObject);
     procedure bntcancelarClick(Sender: TObject);
-    procedure edtEditarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -61,22 +58,6 @@ begin
 
 
     Close;//Acaba o cadastro.
-
-end;
-
-procedure TFormCadastro.edtEditarClick(Sender: TObject);
-begin
-  if FDQuery1.RecordCount=0 then//Para identificar se à o usuário.
-
-begin
-  Showmessage('Selecione um usuário para editar.');
-end;
-  FormCadastro.edtnome.Text:=FDQuery1.Fieldbyname('Nome').AsString;//FieldByname ele me permite que eu obtenha uma informaçao da tabela e modifique a mesma.
-  FormCadastro.dtpNascimento.Date := FDQuery1.FieldByName('DataNascimento').AsDateTime;
-
-  FormCadastro.ShowModal;//Usado para exiber uma tabela.
-
-  FDQuery1.Refresh;//Serve para atualizar os dados.
 
 end;
 
